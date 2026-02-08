@@ -1,4 +1,4 @@
-import { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "@zip-js/zip-js";
+import { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "jsr:@zip-js/zip-js@^2.8.17";
 
 export class CalibreClient {
   private baseUrl: string;

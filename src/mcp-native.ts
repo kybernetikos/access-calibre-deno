@@ -1,5 +1,5 @@
 
-import { TextLineStream } from "@std/streams/text-line-stream";
+import { TextLineStream } from "jsr:@std/streams@^1.0.17/text-line-stream";
 
 export type McpRequest = {
   jsonrpc: "2.0";

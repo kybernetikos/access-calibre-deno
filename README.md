@@ -16,7 +16,7 @@ A Deno-native implementation of the Calibre Reader MCP server.
 You can run this server directly via its URL using Deno.
 
 ```bash
-CALIBRE_URL=http://localhost:8080/ deno run -allow-net=localhost:8080 --allow-env=CALIBRE_URL,CALIBRE_USERNAME,CALIBRE_PASSWORD https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/refs/heads.main/main.ts
+CALIBRE_URL=http://localhost:8080/ deno run --allow-net=localhost:8080 --allow-env=CALIBRE_URL,CALIBRE_USERNAME,CALIBRE_PASSWORD https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/refs/heads/main/main.ts
 ```
 
 ### Environment Variables
@@ -38,7 +38,7 @@ Add this to your MCP settings (e.g., `claude_desktop_config.json`):
         "run",
         "--allow-net=localhost:8080",
         "--allow-env=CALIBRE_URL,CALIBRE_USERNAME,CALIBRE_PASSWORD",
-        "https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/refs/heads.main/main.ts"
+        "https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/refs/heads/main/main.ts"
       ],
       "env": {
         "CALIBRE_URL": "http://localhost:8080/"

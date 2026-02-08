@@ -1,0 +1,482 @@
+[0m[1m[31merror[no-import-prefix][0m: [0m[1mInline 'npm:', 'jsr:' or 'https:' dependency not allowed[0m
+ [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:2:32[0m
+ [0m[38;5;12m | [0m
+[0m[38;5;12m2 | [0mimport { TextLineStream } from "jsr:@std/streams/text-line-stream";
+ [0m[38;5;12m | [0m                               [0m[1m[31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [0m[38;5;12m=[0m [0m[1mhint[0m: Add it as a dependency in a deno.json or package.json instead and reference it here via its bare specifier
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-import-prefix
+
+
+[0m[1m[31merror[no-unversioned-import][0m: [0m[1mMissing version in specifier[0m
+ [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:2:32[0m
+ [0m[38;5;12m | [0m
+[0m[38;5;12m2 | [0mimport { TextLineStream } from "jsr:@std/streams/text-line-stream";
+ [0m[38;5;12m | [0m                               [0m[1m[31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [0m[38;5;12m=[0m [0m[1mhint[0m: Add a version requirement after the package name
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-unversioned-import
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+ [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:8:12[0m
+ [0m[38;5;12m | [0m
+[0m[38;5;12m8 | [0m  params?: any;
+ [0m[38;5;12m | [0m           [0m[1m[31m^^^[0m
+  [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:14:12[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m14 | [0m  result?: any;
+  [0m[38;5;12m | [0m           [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:15:11[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m15 | [0m  error?: any;
+  [0m[38;5;12m | [0m          [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:21:12[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m21 | [0m  params?: any;
+  [0m[38;5;12m | [0m           [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:25:42[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m25 | [0m  private handlers: Map<string, (params: any) => Promise<any>> = new Map();
+  [0m[38;5;12m | [0m                                         [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:25:58[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m25 | [0m  private handlers: Map<string, (params: any) => Promise<any>> = new Map();
+  [0m[38;5;12m | [0m                                                         [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-unused-vars][0m: [0m[1m`options` is never used[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:29:56[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m29 | [0m  constructor(info: { name: string; version: string }, options?: any) {
+  [0m[38;5;12m | [0m                                                       [0m[1m[31m^^^^^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: If this is intentional, prefix it with an underscore like `_options`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-unused-vars
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:29:66[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m29 | [0m  constructor(info: { name: string; version: string }, options?: any) {
+  [0m[38;5;12m | [0m                                                                 [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:34:76[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m34 | [0m  setRequestHandler(schema: { method: string } | string, handler: (params: any) => Promise<any>) {
+  [0m[38;5;12m | [0m                                                                           [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:34:92[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m34 | [0m  setRequestHandler(schema: { method: string } | string, handler: (params: any) => Promise<any>) {
+  [0m[38;5;12m | [0m                                                                                           [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:70:29[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m70 | [0m            } catch (error: any) {
+  [0m[38;5;12m | [0m                            [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-unused-vars][0m: [0m[1m`e` is never used[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:82:16[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m82 | [0m      } catch (e) {
+  [0m[38;5;12m | [0m               [0m[1m[31m^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: If this is intentional, prefix it with an underscore like `_e`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-unused-vars
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:88:53[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m88 | [0m  private sendResponse(id: string | number, result: any) {
+  [0m[38;5;12m | [0m                                                    [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/mcp-native.ts[0m[0m[33m:106:32[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m106 | [0m  private sendMessage(message: any) {
+   [0m[38;5;12m | [0m                               [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:20:37[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m20 | [0mfunction log(message: string, data: any = null) {
+  [0m[38;5;12m | [0m                                    [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[require-await][0m: [0m[1mAsync arrow function has no 'await' expression or 'await using' declaration.[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:47:52[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m47 | [0mserver.setRequestHandler(ListPromptsRequestSchema, async () => {
+  [0m[38;5;12m | [0m                                                   [0m[1m[31m^^^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/require-await
+
+
+[0m[1m[31merror[require-await][0m: [0m[1mAsync arrow function has no 'await' expression or 'await using' declaration.[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:66:50[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m66 | [0mserver.setRequestHandler(GetPromptRequestSchema, async (request) => {
+  [0m[38;5;12m | [0m                                                 [0m[1m[31m^^^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/require-await
+
+
+[0m[1m[31merror[require-await][0m: [0m[1mAsync arrow function has no 'await' expression or 'await using' declaration.[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:95:50[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m95 | [0mserver.setRequestHandler(ListToolsRequestSchema, async () => {
+  [0m[38;5;12m | [0m                                                 [0m[1m[31m^^^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Remove 'async' keyword from the function or use 'await' expression or 'await using' declaration inside.
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/require-await
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:250:32[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m250 | [0m        const query = (args as any).query;
+   [0m[38;5;12m | [0m                               [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:258:53[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m258 | [0m              libraryName: (libraries[libraryId] as any).name,
+   [0m[38;5;12m | [0m                                                    [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:268:64[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m268 | [0m        const { libraryId, limit = 100, offset = 0 } = args as any;
+   [0m[38;5;12m | [0m                                                               [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:270:45[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m270 | [0m        const simplified = books.map((book: any) => ({
+   [0m[38;5;12m | [0m                                            [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:280:60[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m280 | [0m        const chapters = await client.getChapters((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                           [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:280:85[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m280 | [0m        const chapters = await client.getChapters((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                                                    [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:284:65[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m284 | [0m        const content = await client.getChapterContent((args as any).libraryId, (args as any).bookId, (args as any).path);
+   [0m[38;5;12m | [0m                                                                [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:284:90[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m284 | [0m        const content = await client.getChapterContent((args as any).libraryId, (args as any).bookId, (args as any).path);
+   [0m[38;5;12m | [0m                                                                                         [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:284:112[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m284 | [0m        const content = await client.getChapterContent((args as any).libraryId, (args as any).bookId, (args as any).path);
+   [0m[38;5;12m | [0m                                                                                                               [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:288:81[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m288 | [0m        const { libraryId, bookId, path, offset = 0, length = 30000 } = args as any;
+   [0m[38;5;12m | [0m                                                                                [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:298:59[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m298 | [0m        const buffer = await client.getBookCover((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                          [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:298:84[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m298 | [0m        const buffer = await client.getBookCover((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                                                   [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:310:60[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m310 | [0m        const results = await client.searchInBook((args as any).libraryId, (args as any).bookId, (args as any).query);
+   [0m[38;5;12m | [0m                                                           [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:310:85[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m310 | [0m        const results = await client.searchInBook((args as any).libraryId, (args as any).bookId, (args as any).query);
+   [0m[38;5;12m | [0m                                                                                    [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:310:107[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m310 | [0m        const results = await client.searchInBook((args as any).libraryId, (args as any).bookId, (args as any).query);
+   [0m[38;5;12m | [0m                                                                                                          [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:314:64[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m314 | [0m        const metadata = await client.getBookMetadata((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                               [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:314:89[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m314 | [0m        const metadata = await client.getBookMetadata((args as any).libraryId, (args as any).bookId);
+   [0m[38;5;12m | [0m                                                                                        [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:318:53[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m318 | [0m        const { libraryId, bookId, path } = args as any;
+   [0m[38;5;12m | [0m                                                    [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:340:47[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m340 | [0m        const { libraryId, bookId } = args as any;
+   [0m[38;5;12m | [0m                                              [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/main.ts[0m[0m[33m:347:19[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m347 | [0m  } catch (error: any) {
+   [0m[38;5;12m | [0m                  [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-import-prefix][0m: [0m[1mInline 'npm:', 'jsr:' or 'https:' dependency not allowed[0m
+ [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:1:75[0m
+ [0m[38;5;12m | [0m
+[0m[38;5;12m1 | [0mimport { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "jsr:@zip-js/zip-js";
+ [0m[38;5;12m | [0m                                                                          [0m[1m[31m^^^^^^^^^^^^^^^^^^^^[0m
+  [0m[38;5;12m=[0m [0m[1mhint[0m: Add it as a dependency in a deno.json or package.json instead and reference it here via its bare specifier
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-import-prefix
+
+
+[0m[1m[31merror[no-unversioned-import][0m: [0m[1mMissing version in specifier[0m
+ [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:1:75[0m
+ [0m[38;5;12m | [0m
+[0m[38;5;12m1 | [0mimport { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "jsr:@zip-js/zip-js";
+ [0m[38;5;12m | [0m                                                                          [0m[1m[31m^^^^^^^^^^^^^^^^^^^^[0m
+  [0m[38;5;12m=[0m [0m[1mhint[0m: Add a version requirement after the package name
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-unversioned-import
+
+
+[0m[1m[31merror[prefer-const][0m: [0m[1m`name` is never reassigned[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:36:11[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m36 | [0m      let name = typeof info === "string" ? info : ((info as any).name || id);
+  [0m[38;5;12m | [0m          [0m[1m[31m^^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use `const` instead
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/prefer-const
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:36:62[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m36 | [0m      let name = typeof info === "string" ? info : ((info as any).name || id);
+  [0m[38;5;12m | [0m                                                             [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+  [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:37:74[0m
+  [0m[38;5;12m | [0m
+[0m[38;5;12m37 | [0m      let count = (typeof info === "object" && info !== null) ? (info as any).num_books : undefined;
+  [0m[38;5;12m | [0m                                                                         [0m[1m[31m^^^[0m
+   [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[no-explicit-any][0m: [0m[1m`any` type is not allowed[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:227:44[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m227 | [0m  private async getTOCFromEntries(entries: any[], opfXml: string, opfDir: string) {
+   [0m[38;5;12m | [0m                                           [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use a specific type other than `any`
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/no-explicit-any
+
+
+[0m[1m[31merror[prefer-const][0m: [0m[1m`toc` is never reassigned[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:230:9[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m230 | [0m    let toc: { title: string; path: string }[] = [];
+   [0m[38;5;12m | [0m        [0m[1m[31m^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use `const` instead
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/prefer-const
+
+
+[0m[1m[31merror[prefer-const][0m: [0m[1m`label` is never reassigned[0m
+   [0m[38;5;12m-->[0m [0m[36m/mnt/storage/Development/nursery/access-calibre-deno/src/client.ts[0m[0m[33m:244:17[0m
+   [0m[38;5;12m | [0m
+[0m[38;5;12m244 | [0m            let label = match[1].trim();
+   [0m[38;5;12m | [0m                [0m[1m[31m^^^^^[0m
+    [0m[38;5;12m=[0m [0m[1mhint[0m: Use `const` instead
+
+  [0m[38;5;12mdocs[0m: https://docs.deno.com/lint/rules/prefer-const
+
+
+Found 48 problems
+Checked 3 files
