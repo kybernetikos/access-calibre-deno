@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@std/streams": "jsr:@std/streams@^1.0.17",
+    "@std/streams/text-line-stream": "jsr:@std/streams@^1.0.17/text-line-stream",
+    "@zip-js/zip-js": "jsr:@zip-js/zip-js@^2.8.17"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/streams@*": "1.0.17",
+    "jsr:@std/streams@^1.0.17": "1.0.17",
+    "jsr:@zip-js/zip-js@*": "2.8.17",
+    "jsr:@zip-js/zip-js@^2.8.17": "2.8.17"
+  },
+  "jsr": {
+    "@std/streams@1.0.17": {
+      "integrity": "7859f3d9deed83cf4b41f19223d4a67661b3d3819e9fc117698f493bf5992140"
+    },
+    "@zip-js/zip-js@2.8.17": {
+      "integrity": "ed05ac9c883df88f00e679fe4f819fe53675a5409e38c9b78cd037e490edade4"
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/streams@^1.0.17",
+      "jsr:@zip-js/zip-js@^2.8.17"
+    ]
+  }
+}
