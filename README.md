@@ -30,12 +30,9 @@ Add this to your MCP settings (e.g., `claude_desktop_config.json`):
       "command": "deno",
       "args": [
         "run",
-        "--allow-net=localhost:8080,0.0.0.0",
+        "--allow-net=localhost:8080",
         "--allow-env=CALIBRE_URL,CALIBRE_USERNAME,CALIBRE_PASSWORD",
-        "--allow-run=google-chrome,google-chrome-stable,chromium",
-        "--allow-read",
-        "--allow-write",
-        "https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/main/main.ts"
+        "https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/refs/heads/main/main.ts"
       ],
       "env": {
         "CALIBRE_URL": "http://localhost:8080/"
@@ -44,6 +41,8 @@ Add this to your MCP settings (e.g., `claude_desktop_config.json`):
   }
 }
 ```
+
+Note: If you want to use the render_chapter_page tool, you should be aware that it requires more permissions than the other tools. It will download chrome in the background, which may cause the first call to time out. It's also the only tool that needs extensive other permissions - in this case, more network (to communicate with the browser renderer), environment variable access (for configuration), read, write and run access (for chrome download and running).
 
 ### Local Installation
 

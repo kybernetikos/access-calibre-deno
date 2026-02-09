@@ -1,5 +1,6 @@
 import { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "jsr:@zip-js/zip-js@^2.8.17";
-import { log } from "./logger.ts";
+import { log, error } from "./logger.ts";
+import { launch } from "jsr:@astral/astral@^0.5.5";
 
 export class CalibreClient {
   private baseUrl: string;
@@ -357,5 +358,81 @@ export class CalibreClient {
       if (results.length >= 50) break;
     }
     return results;
+  }
+
+  async renderChapterPage(libraryId: string, bookId: number, chapterPath: string, pageNumber = 1, width = 800, height = 1000) {
+    const buffer = await this.getEpubBuffer(libraryId, bookId);
+    const reader = new ZipReader(new Uint8ArrayReader(new Uint8Array(buffer)));
+    const entries = await reader.getEntries();
+
+    const controller = new AbortController();
+    const server = Deno.serve({
+      port: 0,
+      signal: controller.signal,
+      onListen: () => {},
+    }, async (req) => {
+      const url = new URL(req.url);
+      const filePath = decodeURIComponent(url.pathname.slice(1));
+      const entry = entries.find(e => this._normalizePath(e.filename) === this._normalizePath(filePath));
+      
+      if (entry && ("getData" in entry)) {
+        const content = await entry.getData(new Uint8ArrayWriter());
+        let contentType = "application/octet-stream";
+        if (filePath.endsWith(".html") || filePath.endsWith(".htm")) contentType = "text/html";
+        else if (filePath.endsWith(".css")) contentType = "text/css";
+        else if (filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) contentType = "image/jpeg";
+        else if (filePath.endsWith(".png")) contentType = "image/png";
+        else if (filePath.endsWith(".gif")) contentType = "image/gif";
+        else if (filePath.endsWith(".svg")) contentType = "image/svg+xml";
+
+        return new Response(content, {
+          headers: { "Content-Type": contentType }
+        });
+      }
+      return new Response("Not found", { status: 404 });
+    });
+
+    try {
+      const { port } = server.addr;
+      const browser = await launch({
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-web-security"],
+        headless: true,
+      });
+
+      try {
+        const page = await browser.newPage();
+        await page.setViewportSize({ width, height });
+        
+        const url = `http://localhost:${port}/${chapterPath}`;
+        log(`Rendering page ${pageNumber} of ${url}`);
+        
+        await page.goto(url, { waitUntil: "networkidle0" });
+        
+        const totalPages = await page.evaluate((h) => {
+          return Math.ceil((globalThis as any).document.documentElement.scrollHeight / h) || 1;
+        }, { args: [height] });
+
+        if (pageNumber > 1) {
+          await page.evaluate(({ n, h }) => {
+            (globalThis as any).window.scrollTo(0, (n - 1) * h);
+          }, { args: [{ n: pageNumber, h: height }] });
+          
+          // Wait a bit for scroll and any lazy loading
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
+        
+        const screenshot = await page.screenshot();
+        
+        return {
+          buffer: screenshot,
+          totalPages
+        };
+      } finally {
+        await browser.close();
+      }
+    } finally {
+      controller.abort();
+      await server.finished;
+    }
   }
 }
