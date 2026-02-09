@@ -12,6 +12,7 @@ A Deno-native implementation of the Calibre Reader MCP server.
 - **Search within books**: Find specific text across the entire content of a book.
 - **Metadata and Covers**: Access full book metadata and cover images.
 - **EPUB Inspection**: List and extract individual files from EPUBs (images, stylesheets, etc.).
+- **Visual Rendering**: Render specific book pages as images to see complex layouts or illustrations (uses a Deno-native browser automation library). Note that this tool requires more permissions and will download a browser on first use.
 - **Interactive Prompts**: Includes an `analyze_book` prompt to guide LLMs through investigating a book.
 
 ## Running the Server
@@ -29,8 +30,11 @@ Add this to your MCP settings (e.g., `claude_desktop_config.json`):
       "command": "deno",
       "args": [
         "run",
-        "--allow-net=localhost:8080",
+        "--allow-net=localhost:8080,0.0.0.0",
         "--allow-env=CALIBRE_URL,CALIBRE_USERNAME,CALIBRE_PASSWORD",
+        "--allow-run=google-chrome,google-chrome-stable,chromium",
+        "--allow-read",
+        "--allow-write",
         "https://raw.githubusercontent.com/kybernetikos/access-calibre-deno/main/main.ts"
       ],
       "env": {
@@ -86,3 +90,6 @@ deno run ... main.ts --verbose
 - `get_book_cover`: Retrieve the cover image.
 - `list_epub_files`: List all files inside the EPUB container.
 - `get_epub_file`: Retrieve a specific file (image or text) from the EPUB.
+- `render_chapter_page`: Render a specific page of a chapter as an image.
+    - **Note**: The first time this tool is used, it will download chrome in the background, which may cause the first call to time out.
+    - **Security**: This is the only tool that needs extensive other permissions - in this case, more network, environment variable access, read write and run access. If you are worried about what the agent might do, you should avoid using this tool (and can omit the extra permissions).

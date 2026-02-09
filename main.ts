@@ -219,6 +219,22 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: ["libraryId", "bookId"],
         },
       },
+      {
+        name: "render_chapter_page",
+        description: "Render a specific page of a chapter as an image. Useful for visual layout or complex formatting. NOTE: The first time this tool is used, it will download chrome in the background, which may cause the first call to time out. It's also the only tool that needs extensive other permissions - in this case, more network, environment variable access, read write and run access. If someone is worried about what the agent might do, they should avoid using the render_chapter_page tool.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            libraryId: { type: "string" },
+            bookId: { type: "number" },
+            path: { type: "string", description: "Path to the chapter HTML file" },
+            page: { type: "number", description: "Page number to render (default 1)" },
+            width: { type: "number", description: "Viewport width (default 800)" },
+            height: { type: "number", description: "Viewport height (default 1000)" },
+          },
+          required: ["libraryId", "bookId", "path"],
+        },
+      },
     ],
   };
 });
@@ -332,6 +348,23 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const { libraryId, bookId } = args as any;
         const files = await client.getEpubContents(libraryId, bookId);
         return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+      }
+      case "render_chapter_page": {
+        const { libraryId, bookId, path, page = 1, width = 800, height = 1000 } = args as any;
+        const { buffer, totalPages } = await client.renderChapterPage(libraryId, bookId, path, page, width, height);
+        return {
+          content: [
+            {
+              type: "image",
+              data: toBase64(buffer),
+              mimeType: "image/png",
+            },
+            {
+              type: "text",
+              text: `Page ${page} of ${totalPages}`,
+            },
+          ],
+        };
       }
       default:
         throw new McpError(ErrorCode.MethodNotFound, `Unknown tool: ${name}`);
