@@ -1,5 +1,6 @@
 
 import { TextLineStream } from "jsr:@std/streams@^1.0.17/text-line-stream";
+import { log, error } from "./logger.ts";
 
 export type McpRequest = {
   jsonrpc: "2.0";
@@ -44,6 +45,7 @@ export class McpServer {
     for await (const line of lineStream) {
       if (!line.trim()) continue;
       try {
+        log(`Received message: ${line}`);
         const message = JSON.parse(line);
         if (message.method && message.id !== undefined) {
           // Request
@@ -67,8 +69,14 @@ export class McpServer {
             try {
               const result = await handler(message);
               this.sendResponse(message.id, result);
-            } catch (error: any) {
-              this.sendError(message.id, -32603, error.message);
+            } catch (err: any) {
+              if (err instanceof McpError) {
+                error(`MCP Error handling method ${message.method}`, { code: err.code, message: err.message });
+                this.sendError(message.id, err.code, err.message);
+              } else {
+                error(`Unexpected error handling method ${message.method}`, err);
+                this.sendError(message.id, ErrorCode.InternalError, err.message);
+              }
             }
           } else {
             this.sendError(message.id, -32601, `Method not found: ${message.method}`);
@@ -80,7 +88,7 @@ export class McpServer {
           }
         }
       } catch (e) {
-        // Ignore parse errors or other issues for now
+        error(`Failed to parse or handle message: ${line}`, e);
       }
     }
   }
@@ -105,6 +113,7 @@ export class McpServer {
 
   private sendMessage(message: any) {
     const json = JSON.stringify(message);
+    log(`Sending message: ${json}`);
     Deno.stdout.writeSync(new TextEncoder().encode(json + "\n"));
   }
 }

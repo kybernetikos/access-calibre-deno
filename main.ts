@@ -8,6 +8,7 @@ import {
   McpError
 } from "./src/mcp-native.ts";
 import { CalibreClient } from "./src/client.ts";
+import { log, setVerbose } from "./src/logger.ts";
 
 const CALIBRE_URL = Deno.env.get("CALIBRE_URL") || "http://[::1]:8080/";
 const CALIBRE_USERNAME = Deno.env.get("CALIBRE_USERNAME") || null;
@@ -15,17 +16,8 @@ const CALIBRE_PASSWORD = Deno.env.get("CALIBRE_PASSWORD") || null;
 
 const client = new CalibreClient(CALIBRE_URL, CALIBRE_USERNAME, CALIBRE_PASSWORD);
 
-const LOG_ENABLED = Deno.args.includes("--verbose") || Deno.args.includes("-v");
-
-function log(message: string, data: any = null) {
-  if (LOG_ENABLED) {
-    const timestamp = new Date().toISOString();
-    if (data) {
-      console.error(`[${timestamp}] [LOG] ${message}:`, data instanceof Error ? data : JSON.stringify(data, null, 2));
-    } else {
-      console.error(`[${timestamp}] [LOG] ${message}`);
-    }
-  }
+if (Deno.args.includes("--verbose") || Deno.args.includes("-v")) {
+  setVerbose(true);
 }
 
 function toBase64(buffer: ArrayBuffer | Uint8Array) {

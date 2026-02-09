@@ -1,4 +1,5 @@
 import { ZipReader, Uint8ArrayReader, TextWriter, Uint8ArrayWriter } from "jsr:@zip-js/zip-js@^2.8.17";
+import { log } from "./logger.ts";
 
 export class CalibreClient {
   private baseUrl: string;
@@ -19,9 +20,16 @@ export class CalibreClient {
     if (this.auth) {
       headers.set("Authorization", `Basic ${this.auth}`);
     }
+    log(`Fetching ${fullUrl}`);
     const response = await fetch(fullUrl, { ...options, headers });
     if (!response.ok) {
-      throw new Error(`Fetch failed: ${response.status} ${response.statusText} at ${fullUrl}`);
+      let details = "";
+      try {
+        details = await response.text();
+      } catch {
+        // ignore
+      }
+      throw new Error(`Fetch failed: ${response.status} ${response.statusText} at ${fullUrl}${details ? ` - ${details}` : ""}`);
     }
     return response;
   }
